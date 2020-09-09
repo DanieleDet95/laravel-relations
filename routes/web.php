@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/albums', 'AlbumController'); 
+Route::resource('/albums', 'AlbumController');
+Route::resource('/songs', 'SongController');
+Route::resource('/artists', 'ArtistController');

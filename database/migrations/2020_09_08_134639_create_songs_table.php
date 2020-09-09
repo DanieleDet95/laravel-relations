@@ -17,12 +17,16 @@ class CreateSongsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('genre');
+            $table->string('image');
+            $table->text('description');
+            $table->text('text');
             $table->unsignedBigInteger('album_id');
             $table->timestamps();
 
             $table->foreign('album_id')
             ->references('id')
-            ->on('albums');
+            ->on('albums')
+            ->onDelete('cascade');
         });
     }
 

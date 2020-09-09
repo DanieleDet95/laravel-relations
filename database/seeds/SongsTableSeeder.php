@@ -27,6 +27,9 @@ class SongsTableSeeder extends Seeder
              'metal',
              'indie',
            ]);
+           $newSong->image = $faker->imageUrl($width = 130, $height = 100);
+           $newSong->description = $faker->text(400);
+           $newSong->text = $faker->text(1500);
            $newSong->album_id = $i + 1;
            $newSong->save();
          }

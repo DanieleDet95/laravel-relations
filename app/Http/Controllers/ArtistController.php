@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Album;
+use App\Artist;
 
-class AlbumController extends Controller
+class ArtistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
-      $albums = Album::all();
+      $artists = Artist::all();
 
-      return view('albums.index', compact('albums'));
+      return view('artists.index', compact('artists'));
     }
 
     /**
@@ -46,9 +46,9 @@ class AlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
+    public function show(Artist $artist)
     {
-      return view('albums.show', compact('album'));
+      return view('artists.show', compact('artist'));
     }
 
     /**
@@ -80,11 +80,8 @@ class AlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Album $album)
+    public function destroy($id)
     {
-      $album->delete();
-
-      return redirect()->route('albums.index');
-
+        //
     }
 }

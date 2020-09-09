@@ -10,6 +10,9 @@ class Song extends Model
     'title',
     'genre',
     'album_id',
+    'image',
+    'description',
+    'text',
   ];
 
   public function album(){
