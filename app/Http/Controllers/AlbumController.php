@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Album;
+use App\Artist;
+use Carbon\Carbon;
+
 
 class AlbumController extends Controller
 {
@@ -14,9 +17,14 @@ class AlbumController extends Controller
      */
     public function index()
     {
+      $data = Carbon::now();
+
       $albums = Album::all();
 
-      return view('albums.index', compact('albums'));
+      return view('albums.index', [
+        'albums' => $albums,
+        'data' => $data,
+      ]);
     }
 
     /**
@@ -48,7 +56,17 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-      return view('albums.show', compact('album'));
+      $data = Carbon::now();
+      $artists = Artist::All();
+      // foreach ($artists as $artist) {
+      //   dd($artist['name']);
+      // }
+
+      return view('albums.show', [
+        'album' => $album,
+        'artists' => $artists,
+        'data'=> $data,
+      ]);
     }
 
     /**

@@ -1,6 +1,10 @@
 @extends('layouts.layout')
 
 @section('main-content')
+  <div>
+    <a href="{{ route('home') }}">Home</a>
+  </div>
+  
   <h1>Dettagli song: {{ $song->title }}</h1>
 
   <div class="info-show">
@@ -18,7 +22,4 @@
   <h3 style="width: 30%";>Testo canzone</h3>
   <p style="width: 20%">{{ $song->text }}</p>
 
-  <div>
-    <a href="{{ route('albums.index') }}">Home</a>
-  </div>
 @endsection

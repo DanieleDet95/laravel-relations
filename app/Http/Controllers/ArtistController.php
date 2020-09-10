@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Artist;
+use App\Sponsor;
 
 class ArtistController extends Controller
 {
@@ -57,9 +58,14 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Artist $artist)
     {
-        //
+      $sponsors = Sponsor::all();
+
+      return view('artists.edit',[
+        'artist' => $artist,
+        'sponsors' => $sponsors,
+      ]);
     }
 
     /**
@@ -69,9 +75,24 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Artist $artist)
     {
-        //
+      $request->validate([
+        'year' => 'required|integer|min:1895|max:2020',
+        'description' => 'required',
+      ]);
+
+      $data = $request->all();
+
+      if (isset($data['sponsors'])) {
+        $artist->sponsors()->sync($data['sponsors']);
+      }else {
+        $artist->sponsors()->sync([]);
+      }
+
+      $artist->update($data);
+
+      return redirect()->route('artists.show', $artist);
     }
 
     /**

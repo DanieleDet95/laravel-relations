@@ -1,23 +1,30 @@
 @extends('layouts.layout')
 
 @section('main-content')
-<h1>Lista artisti</h1>
+  <div>
+    <a href="{{ route('home') }}">Home</a>
+  </div>
 
-<div class="artist-flex">
+  <h1 class="flex-center">Lista artisti</h1>
 
-  @foreach ($artists as $artist)
+  <div class="artist-flex">
 
-    <div class="artist-block">
-      <h2>Nome originario: {{ $artist->name }}</h2>
-      <p>Anno di nascita: {{ $artist->year }}</p>
-      <p>Descrizione: {{ $artist->description }}</p>
-      <img src="{{ $artist->image }}" alt="{{ $artist->name }}">
-      @foreach ($artist->albums as $album)
-        <li><a href="{{ route('albums.show' , $album) }}">Visualizza album</a></li>
-      @endforeach
-    </div>
+    @foreach ($artists as $artist)
 
-  @endforeach
+      <div class="artist-block">
+        <a href="{{ route('artists.show' , $artist) }}">
+          <h2>Nome originario: {{ $artist->name }}</h2>
+          <p>Anno di nascita: {{ $artist->year }}</p>
+          <p>Descrizione: {{ $artist->description }}</p>
+          <img src="{{ $artist->image }}" alt="{{ $artist->name }}">
+          <br>
+          @foreach ($artist->albums as $album)
+            <a href="{{ route('albums.show' , $album) }}"class="link-list">Visualizza album</a>
+          @endforeach
+        </a>
+      </div>
 
-</div>
+    @endforeach
+
+  </div>
 @endsection

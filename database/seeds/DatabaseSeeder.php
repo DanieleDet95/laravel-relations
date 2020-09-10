@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         ArtistsTableSeeder::class,
         AlbumsTableSeeder::class,
         SongsTableSeeder::class,
+        SponsorsTableSeeder::class,
       ]);
     }
 }

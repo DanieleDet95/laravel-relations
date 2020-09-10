@@ -1,88 +1,132 @@
+html,
+body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 10px;
+}
 
-html, body {
-    background-color: #fff;
-    color: #636b6f;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 10px;
-}
-td,th{
+table {
   border: 1px solid black;
-  padding: 10px;
 }
-.artist-flex{
+
+table th,
+table tr,
+table td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+.data {
+  text-align: right;
+}
+
+.info-show {
+  float: left;
+  width: 60%;
+}
+
+.immagine-show {
+  float: right;
+  width: 40%;
+}
+
+.immagine-show img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.lista-show {
+  margin: 25px;
+}
+
+.artist-flex {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.artist-block{
-  border: 1px solid black;
-  border-radius: 100px;
-  background: lightgray;
-  text-align: center;
-  width: 25%;
-  margin: 30px 0;
+
+.artist-flex a {
+  text-decoration: none;
+  color: #636b6f;
+}
+
+.artist-block {
+  width: 30%;
   padding: 10px;
-}
-
-.artist-block:hover{
-  box-shadow: 10px 10px 30px 15px black;
-}
-
-.immagine-show{
-  float: right;
-  width: 46%;
+  border: 1px solid black;
+  border-radius: 80px;
+  margin: 30px 0;
   text-align: center;
-}
-.immagine-show img{
-  width: 80%;
+  background: lightgray;
 }
 
-.info-show{
-  float: left;
-  width: 50%;
+.artist-block:hover {
+  box-shadow: 5px 5px 10px 10px black;
 }
 
+.artist-block img {
+  margin-bottom: 20px;
+}
+
+.artist-block .link-list {
+  display: block;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  padding: 5px;
+  width: 40%;
+  border-radius: 20px;
+  margin: 5px auto;
+}
+
+.artist-block .link-list:hover {
+  background: red;
+  color: black;
+}
 
 .full-height {
-    height: 100vh;
+  height: 100vh;
 }
 
 .flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .position-ref {
-    position: relative;
+  position: relative;
 }
 
 .top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
+  position: absolute;
+  right: 10px;
+  top: 18px;
 }
 
 .content {
-    text-align: center;
+  text-align: center;
 }
 
 .title {
-    font-size: 84px;
+  font-size: 84px;
 }
 
 .links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .m-b-md {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
+

@@ -1,8 +1,16 @@
 @extends('layouts.layout')
 
 @section('main-content')
-  <h1>Lista album</h1>
 
+  <div>
+    <a href="{{ route('home') }}">Home</a>
+  </div>
+
+  <h1 class="flex-center">Lista album</h1>
+  <div class="data">
+    <span><b>Data:</b> {{ $data->format('D d F Y') }}</span>
+  </div>
+  <p><a href="{{ route('artists.index') }}"class="link-list">Lista artisti</a></p>
 
   <table>
     <tr>

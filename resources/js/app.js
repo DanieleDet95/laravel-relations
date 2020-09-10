@@ -5,7 +5,7 @@ $(document).ready(
   function(){
 
     $(".artist-block").click(function(){
-      console.log(this);
+      console.log('ciao');
   });
 
 });

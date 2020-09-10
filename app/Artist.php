@@ -16,4 +16,8 @@ class Artist extends Model
   public function albums(){
     return $this->hasMany('App\Album');
   }
+
+  public function sponsors(){
+    return $this->belongsToMany('App\Sponsor');
+  }
 }
